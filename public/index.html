@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+   
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!-- make sure service works is supporiting or not and the register the service worker when the window load-->>
+
+
+   <script>
+     if('serviceWorker' in navigator){
+       console.log("service worker is working");
+       window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./serviceworker.js')
+                    .then((reg) => console.log(' register Success: ', reg.scope))
+                    .catch((err) => console.log(' register Failure: ', err));
+            })
+
+     }
+     Notification.requestPermission(function(result) {
+    if (result === 'granted') {
+      navigator.serviceWorker.ready.then(function(registration) {
+        // registration.showNotification('Vibration Sample', {
+        //   body: 'Buzz! Buzz!',
+        //   icon: '../images/touch/chrome-touch-icon-192x192.png',
+        //   vibrate: [200, 100, 200, 100, 200, 100, 200],
+        //   tag: 'vibration-sample'
+        // });
+      });
+    }
+  });
+
+   </script>
+  </body>
+</html>
