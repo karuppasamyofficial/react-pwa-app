@@ -1,5 +1,5 @@
 {
-  "homepage":"http://karuppasamyofficial.github.io/react-pwa-app",
+  "homepage": "http://karuppasamyofficial.github.io/react-pwa-app",
   "name": "pwaapp",
   "version": "0.1.0",
   "private": true,
@@ -11,6 +11,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "react-select": "^3.1.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
